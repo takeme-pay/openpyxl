@@ -26,13 +26,13 @@ reader = takeme_openpyxl.Reader(INPUT_FILE_NAME, INPUT_COLUMNS)
 if reader.validate_labels() === True:
     row1_column1 = reader.get_value('column1')
     row1_column2 = reader.get_value('column2')
-    print('Column1: {}, Column2: {}'.format(row1_column1, row1_column2)
+    print('Column1: {}, Column2: {}'.format(row1_column1, row1_column2))
 
     reader.next_row()
 
     row2_column1 = reader.get_value('column1')
     row2_column2 = reader.get_value('column2')
-    print('Column1: {}, Column2: {}'.format(row1_column1, row1_column2)
+    print('Column1: {}, Column2: {}'.format(row1_column1, row1_column2))
 
 reader.close()
 ```
