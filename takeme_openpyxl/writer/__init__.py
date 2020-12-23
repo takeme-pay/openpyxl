@@ -88,15 +88,10 @@ class Writer:
             print(str(e))
         return False
 
-    def save(self, filename: str):
+    def flush(self, filename: str):
         """
         Saves in memory sheet to the specified file.
         """
         self.__write_labels()
         self.__work_book.save(filename)
-
-    def close(self):
-        """
-        Close the current workbook.
-        """
         self.__work_book.close()
