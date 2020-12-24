@@ -22,7 +22,7 @@ INPUT_COLUMNS = {
     }
 }
 
-reader = takeme_openpyxl.Reader(INPUT_FILE_NAME, INPUT_COLUMNS)
+reader = takeme_openpyxl.ExcelReader(INPUT_FILE_NAME, INPUT_COLUMNS)
 if reader.validate_labels() === True:
     row1_column1 = reader.get_value('column1')
     row1_column2 = reader.get_value('column2')
@@ -52,7 +52,7 @@ OUTPUT_COLUMNS = {
     }
 }
 
-writer = takeme_openpyxl.Writer(OUTPUT_COLUMNS)
+writer = takeme_openpyxl.ExcelWriter(OUTPUT_COLUMNS)
 writer.write('column1', 'Row1: Column1')
 writer.write('column2', 'Row1: Column2')
 

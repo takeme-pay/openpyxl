@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setuptools.setup(
     name='takeme_openpyxl',
-    version='1.0.1',
+    version='1.0.2',
     description='Python Wrapper for openpyxl',
     long_description=README,
     long_description_content_type='text/markdown',
