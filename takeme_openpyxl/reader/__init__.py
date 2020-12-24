@@ -4,7 +4,7 @@
 import openpyxl
 
 class Reader:
-    def __init__(self, filename: str, column_info: dict):
+    def __init__(self, filename: str, column_info: dict, sheet_name: str=None):
         """
         Constructor
 
@@ -23,7 +23,9 @@ class Reader:
         }
         """
         self.__work_book = openpyxl.load_workbook(filename=filename)
-        self.__work_sheet = self.__work_book.active
+        if sheet_name is None:
+            sheet_name = self.__work_book.sheetnames[0]
+        self.__work_sheet = self.__work_book[sheet_name]
         self.__label_row = 1
         self.__current_row = 2
         self.__column_info = column_info
